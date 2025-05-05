@@ -136,12 +136,29 @@
   .neon-text {
     text-shadow: 0 0 5px theme("colors.green.400"), 0 0 10px theme("colors.green.400");
     animation: text-glow 8s infinite ease-in-out;
+    /* Improve readability with contrast outline */
+    -webkit-text-stroke: 0.5px black;
   }
   
   @keyframes text-glow {
     0% { text-shadow: 0 0 5px theme("colors.green.400"), 0 0 10px theme("colors.green.400"); }
     50% { text-shadow: 0 0 8px theme("colors.green.400"), 0 0 15px theme("colors.green.400"); }
     100% { text-shadow: 0 0 5px theme("colors.green.400"), 0 0 10px theme("colors.green.400"); }
+  }
+  
+  /* Accessible font variations */
+  .data-value { 
+    @apply font-data text-base tracking-wide leading-normal;
+  }
+  
+  .data-label {
+    @apply font-mono text-sm tracking-normal leading-normal;
+  }
+  
+  /* Focus styles for accessibility */
+  *:focus-visible {
+    outline: 2px solid theme("colors.green.400");
+    outline-offset: 2px;
   }
   
   @keyframes progress {

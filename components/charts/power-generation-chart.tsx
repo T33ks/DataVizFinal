@@ -363,8 +363,22 @@ export default function PowerGenerationChart({ data, selectedCountries }: PowerG
   }, [data, selectedCountries])
 
   return (
-    <div className="w-full h-[400px] relative">
-      <svg ref={svgRef} className="w-full h-full"></svg>
+    <div 
+      className="w-full h-[400px] relative"
+      role="img"
+      aria-label="Power generation chart showing nuclear electricity production in TWh over time for selected countries"
+    >
+      <svg 
+        ref={svgRef} 
+        className="w-full h-full" 
+        aria-hidden="true"
+      ></svg>
+      {/* Hidden accessible table for screen readers */}
+      <div className="sr-only">
+        <p>This is a time series chart showing nuclear power generation over time.</p>
+        <p>Data is available for countries such as United States, France, China, Germany, and others.</p>
+        <p>Use the country selector to view specific country data.</p>
+      </div>
     </div>
   )
 }

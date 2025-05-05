@@ -11,6 +11,8 @@ const config: Config = {
     extend: {
       fontFamily: {
         pixel: ["var(--font-press-start-2p)", "monospace"],
+        mono: ["var(--font-space-mono)", "Consolas", "monospace"],
+        data: ["var(--font-vt323)", "monospace"],
       },
       colors: {
         background: "hsl(var(--background))",
