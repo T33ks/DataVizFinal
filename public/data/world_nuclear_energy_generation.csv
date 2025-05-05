@@ -1,0 +1,145 @@
+Entity,Year,electricity_from_nuclear_twh,share_of_electricity_pct
+United States,1990,576.9,19.0
+United States,1995,673.4,20.1
+United States,2000,753.9,19.8
+United States,2005,782.0,19.3
+United States,2010,807.0,19.6
+United States,2015,797.2,19.5
+United States,2020,789.9,19.7
+United States,2021,778.2,19.0
+United States,2022,775.4,18.2
+France,1990,297.7,74.5
+France,1995,358.8,76.1
+France,2000,395.0,76.8
+France,2005,430.0,78.5
+France,2010,410.1,75.1
+France,2015,419.0,76.3
+France,2020,335.4,67.1
+France,2021,360.7,69.0
+France,2022,335.7,65.3
+China,1990,0.0,0.0
+China,1995,12.8,0.5
+China,2000,16.7,1.2
+China,2005,53.1,2.1
+China,2010,73.9,1.8
+China,2015,171.4,2.9
+China,2020,344.7,4.8
+China,2021,383.2,5.0
+China,2022,407.5,5.3
+Japan,1990,202.3,23.8
+Japan,1995,286.9,29.9
+Japan,2000,319.8,30.4
+Japan,2005,304.8,27.3
+Japan,2010,288.2,25.1
+Japan,2015,9.4,0.9
+Japan,2020,43.1,4.5
+Japan,2021,61.3,6.2
+Japan,2022,77.4,7.6
+Germany,1990,152.4,27.7
+Germany,1995,153.1,28.8
+Germany,2000,169.6,29.5
+Germany,2005,163.0,26.3
+Germany,2010,140.6,22.4
+Germany,2015,91.8,14.2
+Germany,2020,60.9,11.3
+Germany,2021,65.4,12.0
+Germany,2022,8.8,1.7
+United Kingdom,1990,65.8,19.1
+United Kingdom,1995,89.3,24.5
+United Kingdom,2000,85.1,22.7
+United Kingdom,2005,81.6,19.9
+United Kingdom,2010,62.1,15.7
+United Kingdom,2015,70.3,18.9
+United Kingdom,2020,45.7,14.5
+United Kingdom,2021,45.9,14.8
+United Kingdom,2022,41.3,14.1
+Russia,1990,118.0,12.2
+Russia,1995,99.5,11.8
+Russia,2000,129.9,15.0
+Russia,2005,149.4,15.7
+Russia,2010,170.4,16.5
+Russia,2015,195.5,18.6
+Russia,2020,215.7,20.6
+Russia,2021,222.2,20.0
+Russia,2022,214.5,19.6
+South Korea,1990,52.9,49.1
+South Korea,1995,67.0,36.3
+South Korea,2000,108.8,40.9
+South Korea,2005,146.8,38.2
+South Korea,2010,148.6,32.2
+South Korea,2015,164.8,31.7
+South Korea,2020,160.0,29.6
+South Korea,2021,158.0,27.4
+South Korea,2022,180.5,29.4
+Canada,1990,72.9,14.7
+Canada,1995,100.4,17.3
+Canada,2000,72.8,12.1
+Canada,2005,92.5,14.5
+Canada,2010,90.7,14.8
+Canada,2015,98.4,16.6
+Canada,2020,92.2,15.0
+Canada,2021,86.8,13.5
+Canada,2022,92.2,14.3
+Ukraine,1990,76.2,25.5
+Ukraine,1995,70.5,36.6
+Ukraine,2000,77.3,47.3
+Ukraine,2005,88.8,48.5
+Ukraine,2010,89.2,48.1
+Ukraine,2015,87.6,56.5
+Ukraine,2020,76.2,51.2
+Ukraine,2021,86.2,55.0
+Ukraine,2022,84.8,55.0
+Spain,1990,54.3,35.9
+Spain,1995,55.5,34.1
+Spain,2000,62.2,27.9
+Spain,2005,57.5,19.6
+Spain,2010,61.9,20.6
+Spain,2015,57.3,20.3
+Spain,2020,58.3,22.2
+Spain,2021,58.0,20.8
+Spain,2022,58.5,20.3
+Sweden,1990,68.2,45.5
+Sweden,1995,69.9,46.6
+Sweden,2000,57.3,39.0
+Sweden,2005,72.4,46.7
+Sweden,2010,57.8,38.1
+Sweden,2015,56.3,34.7
+Sweden,2020,66.1,29.8
+Sweden,2021,51.4,30.8
+Sweden,2022,64.0,30.9
+India,1990,6.1,2.2
+India,1995,7.9,2.5
+India,2000,16.9,3.1
+India,2005,17.3,2.5
+India,2010,26.3,2.8
+India,2015,37.4,3.5
+India,2020,43.9,3.3
+India,2021,46.3,3.2
+India,2022,48.2,2.4
+Belgium,1990,42.7,60.1
+Belgium,1995,41.4,55.5
+Belgium,2000,48.2,57.3
+Belgium,2005,47.6,55.6
+Belgium,2010,47.9,51.1
+Belgium,2015,26.1,37.5
+Belgium,2020,41.4,39.1
+Belgium,2021,50.8,50.8
+Belgium,2022,43.2,52.4
+Switzerland,1990,23.6,41.9
+Switzerland,1995,24.9,39.9
+Switzerland,2000,26.4,38.0
+Switzerland,2005,22.9,32.1
+Switzerland,2010,26.3,38.0
+Switzerland,2015,23.0,33.9
+Switzerland,2020,23.0,32.9
+Switzerland,2021,18.6,28.8
+Switzerland,2022,17.1,29.3
+Finland,1990,19.2,35.0
+Finland,1995,19.2,30.0
+Finland,2000,22.5,32.2
+Finland,2005,23.3,33.0
+Finland,2010,22.8,28.4
+Finland,2015,23.2,33.7
+Finland,2020,23.0,33.9
+Finland,2021,23.5,32.8
+Finland,2022,23.5,34.5

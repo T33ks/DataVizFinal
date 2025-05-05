@@ -1,0 +1,269 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 120 100% 50%;
+
+    --primary: 120 100% 50%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 300 100% 50%;
+    --secondary-foreground: 0 0% 0%;
+
+    --accent: 39 100% 50%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 100% 50%;
+    --destructive-foreground: 0 0% 0%;
+
+    --border: 120 100% 50%;
+    --input: 120 100% 50%;
+    --ring: 120 100% 50%;
+
+    --radius: 0px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    image-rendering: pixelated;
+  }
+}
+
+@layer components {
+  /* Nuclear glow effects */
+  .nuclear-glow {
+    @apply relative;
+  }
+  
+  .nuclear-glow::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 0 15px theme("colors.green.400");
+    opacity: 0;
+    animation: glow-pulse 4s infinite ease-in-out;
+    pointer-events: none; /* Ensure glow doesn't interfere with click events */
+    z-index: 1; /* Keep the glow beneath interactive elements */
+  }
+  
+  @keyframes glow-pulse {
+    0% { opacity: 0.2; }
+    50% { opacity: 0.6; }
+    100% { opacity: 0.2; }
+  }
+  
+  .reactor-core {
+    @apply relative;
+    &::before {
+      content: "";
+      position: absolute;
+      inset: -10px;
+      background: radial-gradient(circle, rgba(74, 222, 128, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
+      border-radius: 50%;
+      animation: core-pulse 4s infinite ease-in-out;
+    }
+  }
+  
+  @keyframes core-pulse {
+    0% { opacity: 0.3; transform: scale(0.95); }
+    50% { opacity: 0.7; transform: scale(1.05); }
+    100% { opacity: 0.3; transform: scale(0.95); }
+  }
+
+  .pixel-border {
+    box-shadow: 0 0 0 2px theme("colors.green.400"), 0 0 0 4px theme("colors.black"), 0 0 0 6px
+      theme("colors.green.400"), 0 0 15px theme("colors.green.400");
+    animation: border-glow 8s infinite ease-in-out;
+  }
+  
+  @keyframes border-glow {
+    0% { box-shadow: 0 0 0 2px theme("colors.green.400"), 0 0 0 4px theme("colors.black"), 0 0 0 6px theme("colors.green.400"), 0 0 10px theme("colors.green.400"); }
+    50% { box-shadow: 0 0 0 2px theme("colors.green.400"), 0 0 0 4px theme("colors.black"), 0 0 0 6px theme("colors.green.400"), 0 0 20px theme("colors.green.400"); }
+    100% { box-shadow: 0 0 0 2px theme("colors.green.400"), 0 0 0 4px theme("colors.black"), 0 0 0 6px theme("colors.green.400"), 0 0 10px theme("colors.green.400"); }
+  }
+
+  .pixel-button {
+    @apply bg-black text-green-400 border-2 border-green-400 px-4 py-2 transition-all duration-200;
+    box-shadow: 0 0 10px theme("colors.green.400");
+    position: relative;
+    overflow: hidden;
+    
+    &::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(74, 222, 128, 0.3) 0%, rgba(0, 0, 0, 0) 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+  }
+
+  .pixel-button:hover {
+    @apply bg-green-400 text-black;
+    box-shadow: 0 0 20px theme("colors.green.400");
+    
+    &::after {
+      opacity: 1;
+    }
+  }
+
+  .pixel-panel {
+    @apply bg-black border-2 border-green-400 p-4;
+    box-shadow: 0 0 15px theme("colors.green.400");
+    animation: panel-glow 10s infinite ease-in-out;
+  }
+  
+  @keyframes panel-glow {
+    0% { box-shadow: 0 0 10px theme("colors.green.400"); }
+    50% { box-shadow: 0 0 25px theme("colors.green.400"); }
+    100% { box-shadow: 0 0 10px theme("colors.green.400"); }
+  }
+
+  .neon-text {
+    text-shadow: 0 0 5px theme("colors.green.400"), 0 0 10px theme("colors.green.400");
+    animation: text-glow 8s infinite ease-in-out;
+  }
+  
+  @keyframes text-glow {
+    0% { text-shadow: 0 0 5px theme("colors.green.400"), 0 0 10px theme("colors.green.400"); }
+    50% { text-shadow: 0 0 8px theme("colors.green.400"), 0 0 15px theme("colors.green.400"); }
+    100% { text-shadow: 0 0 5px theme("colors.green.400"), 0 0 10px theme("colors.green.400"); }
+  }
+  
+  @keyframes progress {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+  }
+  
+  @keyframes ellipsis {
+    0% { content: "."; }
+    33% { content: ".."; }
+    66% { content: "..."; }
+    100% { content: ""; }
+  }
+
+  .neon-text-purple {
+    @apply text-purple-400;
+    text-shadow: 0 0 5px theme("colors.purple.400"), 0 0 10px theme("colors.purple.400");
+  }
+
+  .neon-text-yellow {
+    @apply text-yellow-400;
+    text-shadow: 0 0 5px theme("colors.yellow.400"), 0 0 10px theme("colors.yellow.400");
+  }
+
+  .neon-text-red {
+    @apply text-red-500;
+    text-shadow: 0 0 5px theme("colors.red.500"), 0 0 10px theme("colors.red.500");
+  }
+
+  .pixel-scanline {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pixel-scanline::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.15),
+      rgba(0, 0, 0, 0.15) 1px,
+      transparent 1px,
+      transparent 2px
+    );
+    pointer-events: none;
+  }
+
+  .pixel-box-animate {
+    position: relative;
+    overflow: hidden;
+    animation: pixel-sweep 1.5s ease-in-out;
+  }
+
+  @keyframes pixel-sweep {
+    0% {
+      clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+    }
+    100% {
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+  }
+
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 0.8s;
+  }
+
+  .markdown h1 {
+    @apply text-xl font-bold mb-4 neon-text;
+  }
+
+  .markdown h2 {
+    @apply text-lg font-bold mb-3 neon-text-purple;
+  }
+
+  .markdown h3 {
+    @apply text-base font-bold mb-2 neon-text-yellow;
+  }
+
+  .markdown p {
+    @apply mb-4 text-sm;
+  }
+
+  .markdown strong {
+    @apply text-green-300;
+  }
+
+  .markdown em {
+    @apply text-purple-300;
+  }
+
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: theme("colors.green.400") theme("colors.black");
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: theme("colors.black");
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background-color: theme("colors.green.400");
+    border-radius: 0;
+    border: 1px solid theme("colors.black");
+  }
+}

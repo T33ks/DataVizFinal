@@ -1,0 +1,34 @@
+[
+  {
+    "Entity": "Coal",
+    "Deaths per TWh of electricity production": 24.62
+  },
+  {
+    "Entity": "Oil",
+    "Deaths per TWh of electricity production": 18.43
+  },
+  {
+    "Entity": "Natural Gas",
+    "Deaths per TWh of electricity production": 2.82
+  },
+  {
+    "Entity": "Biomass",
+    "Deaths per TWh of electricity production": 4.63
+  },
+  {
+    "Entity": "Nuclear",
+    "Deaths per TWh of electricity production": 0.07
+  },
+  {
+    "Entity": "Wind",
+    "Deaths per TWh of electricity production": 0.04
+  },
+  {
+    "Entity": "Hydropower",
+    "Deaths per TWh of electricity production": 0.02
+  },
+  {
+    "Entity": "Solar",
+    "Deaths per TWh of electricity production": 0.02
+  }
+]
