@@ -48,6 +48,7 @@ export default function NuclearHeader() {
             <span className="mr-2">{formattedDate}</span>
             <span>{formattedTime}</span>
           </div>
+          <div className="text-xs opacity-50 text-[#FF7F00]">Created by: Trenton Kenney</div>
         </div>
       </div>
     </header>

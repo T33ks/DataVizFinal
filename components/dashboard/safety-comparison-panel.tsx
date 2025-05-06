@@ -80,7 +80,31 @@ export default function SafetyComparisonPanel({ data, error }: SafetyComparisonP
           {error ? (
             <ErrorDisplay message={error} />
           ) : (
-            <SafetyBarChart data={data} selectedEnergyTypes={selectedEnergyTypes} useLogScale={useLogScale} />
+            <>
+              <SafetyBarChart data={data} selectedEnergyTypes={selectedEnergyTypes} useLogScale={useLogScale} />
+              
+              {/* Hazard symbol with glowing effect and link */}
+              <div className="mt-4 flex items-center justify-center">
+                <a 
+                  href="https://ourworldindata.org/what-was-the-death-toll-from-chernobyl-and-fukushima" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-3 group"
+                >
+                  <div className="flex-shrink-0">
+                    <div className="w-10 h-10 flex items-center justify-center text-2xl animate-pulse text-yellow-400">
+                      <div className="relative">
+                        <span className="absolute -inset-0.5 rounded-full bg-yellow-400 opacity-50 blur-sm animate-pulse"></span>
+                        <span className="relative z-10">☢️</span>
+                      </div>
+                    </div>
+                  </div>
+                  <span className="text-red-500 text-xs font-pixel group-hover:underline">
+                    What was the death toll from Chernobyl and Fukushima?
+                  </span>
+                </a>
+              </div>
+            </>
           )}
         </div>
       </div>

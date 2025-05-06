@@ -88,7 +88,7 @@ export default function ReactorsMapDirect({ highlightedCountries }: ReactorsMapP
     d3.select(svgRef.current).selectAll("*").remove()
 
     try {
-      // Set up dimensions
+      // Set up dimensions - fit within the container bounds
       const width = svgRef.current.clientWidth
       const height = 400
 
@@ -104,12 +104,12 @@ export default function ReactorsMapDirect({ highlightedCountries }: ReactorsMapP
         .attr("stroke", "#4ade80")
         .attr("stroke-width", 2)
 
-      // Create a projection
+      // Create a projection - properly constrained to fit within bounds
       const projection = d3
         .geoMercator()
-        .scale(width / 6)
-        .center([0, 20])
-        .translate([width / 2, height / 2])
+        .scale(width / 8.5) // Further reduced scale to ensure map fits within container
+        .center([10, 35]) // Adjusted center to better position map vertically
+        .translate([width / 2, height / 2 - 20]) // Adjusted vertical position by moving the map up slightly
 
       // Create a path generator
       const pathGenerator = d3.geoPath().projection(projection)
@@ -233,13 +233,13 @@ export default function ReactorsMapDirect({ highlightedCountries }: ReactorsMapP
         
         // Calculate legend dimensions
         const legendItemHeight = 16; // Reduced from 20
-        const legendWidth = 140;
+        const legendWidth = 180; // Increased from 140 to fit text better
         const legendHeight = legendItems.length * legendItemHeight + 10;
         
-        // Create background for legend
+        // Create background for legend - moved up slightly to avoid overlapping with bottom countries
         svg.append("rect")
           .attr("x", 15)
-          .attr("y", height - 125)
+          .attr("y", height - 135) // Moved up by 10px
           .attr("width", legendWidth)
           .attr("height", legendHeight)
           .attr("fill", "rgba(128, 128, 128, 0.2)") // Light grey, semi-transparent
@@ -248,7 +248,7 @@ export default function ReactorsMapDirect({ highlightedCountries }: ReactorsMapP
           .attr("rx", 3) // Rounded corners
           .attr("ry", 3)
         
-        const legend = svg.append("g").attr("transform", `translate(20, ${height - 120})`)
+        const legend = svg.append("g").attr("transform", `translate(20, ${height - 130})`) // Adjusted to match the moved legend background
 
         legendItems.forEach((item, i) => {
           legend
@@ -321,7 +321,7 @@ export default function ReactorsMapDirect({ highlightedCountries }: ReactorsMapP
 
   return (
     <div className="w-full h-[400px] relative">
-      <svg ref={svgRef} className="w-full h-full"></svg>
+      <svg ref={svgRef} className="w-full h-full overflow-hidden"></svg> {/* Using overflow-hidden to ensure content stays within bounds */}
     </div>
   )
 }

@@ -220,28 +220,46 @@ export default function CountryProfilesScatter({ data, viewMode, selectedCountri
         .style("font-size", "12px")
         .text(`Nuclear Country Profiles (${viewMode.toUpperCase()})`)
 
-      // Add legend
-      const legend = svg.append("g").attr("transform", `translate(${width - 100}, 10)`)
-
+      // Add legend with semi-transparent background and green border
       const clusters = [
         { id: "0", label: "High Nuclear" },
         { id: "1", label: "Medium Nuclear" },
         { id: "2", label: "Low Nuclear" },
         { id: "3", label: "Emerging Nuclear" },
       ]
+      
+      // Calculate legend dimensions
+      const legendItemHeight = 20;
+      const legendWidth = 160; // Increased from 130 to fit text better
+      const legendHeight = clusters.length * legendItemHeight + 10;
+      
+      // Create background for legend in bottom right corner
+      svg.append("rect")
+        .attr("x", width - legendWidth - 10) // Position at right edge with 10px margin
+        .attr("y", height - legendHeight - 10) // Position at bottom with 10px margin
+        .attr("width", legendWidth)
+        .attr("height", legendHeight)
+        .attr("fill", "rgba(128, 128, 128, 0.5)") // Grey semi-transparent
+        .attr("stroke", "#4ade80") // Green outline
+        .attr("stroke-width", 1)
+        .attr("rx", 3) // Rounded corners
+        .attr("ry", 3)
+      
+      // Add legend group
+      const legend = svg.append("g").attr("transform", `translate(${width - legendWidth}, ${height - legendHeight})`)
 
       clusters.forEach((cluster, i) => {
         legend
           .append("circle")
           .attr("cx", 0)
-          .attr("cy", i * 20)
+          .attr("cy", i * legendItemHeight)
           .attr("r", 5)
           .attr("fill", colorScale(cluster.id))
 
         legend
           .append("text")
           .attr("x", 10)
-          .attr("y", i * 20 + 4)
+          .attr("y", i * legendItemHeight + 4)
           .attr("fill", "#4ade80")
           .style("font-family", "var(--font-press-start-2p)")
           .style("font-size", "8px")

@@ -15,6 +15,7 @@ export default function ControlPanel({ activeView, setActiveView }: ControlPanel
     { value: "safety", label: "SAFETY COMPARISON" },
     { value: "energy", label: "ENERGY MIX" },
     { value: "profiles", label: "COUNTRY PROFILES" },
+    { value: "reactor", label: "REACTOR WORKSPACE" },
     { value: "paper", label: "TOP SECRET" },
   ]
 

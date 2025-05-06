@@ -21,8 +21,8 @@ export default function EnergyMixPie({ data, hiddenSources }: EnergyMixPieProps)
     try {
       // Set up dimensions
       const width = svgRef.current.clientWidth
-      const height = 300
-      const radius = Math.min(width, height) / 2 - 40
+      const height = 350 // Increased height for larger pie chart
+      const radius = Math.min(width, height) / 2 - 20 // Reduced padding to make chart larger
 
       // Create SVG
       const svg = d3
@@ -183,14 +183,14 @@ export default function EnergyMixPie({ data, hiddenSources }: EnergyMixPieProps)
   // If no data, show a message
   if (!data) {
     return (
-      <div className="w-full h-[300px] flex items-center justify-center">
+      <div className="w-full h-[350px] flex items-center justify-center">
         <p className="text-red-400 text-sm">No data available</p>
       </div>
     )
   }
 
   return (
-    <div className="w-full h-[300px] relative">
+    <div className="w-full h-[350px] relative flex items-center justify-center">
       <svg ref={svgRef} className="w-full h-full"></svg>
     </div>
   )

@@ -12,6 +12,7 @@ import SafetyComparisonPanel from "./safety-comparison-panel"
 import EnergyMixPanel from "./energy-mix-panel"
 import ReactorsMapPanel from "./reactors-map-panel"
 import PowerGenerationPanel from "./power-generation-panel"
+import ReactorWorkspacePanel from "./reactor-workspace-panel"
 
 export default function NuclearDashboard() {
   const [loading, setLoading] = useState(true)
@@ -140,7 +141,13 @@ export default function NuclearDashboard() {
   }
 
   // Filter visible components based on activeView
+  // Exclude "paper" (TOP SECRET) from showing when "all" is selected
   const showComponent = (componentName: string) => {
+    if (componentName === "paper") {
+      // Only show TOP SECRET when specifically selected
+      return activeView === "paper"
+    }
+    // Show other components when "all" is selected or when specifically selected
     return activeView === "all" || activeView === componentName
   }
 
@@ -222,6 +229,13 @@ export default function NuclearDashboard() {
                     selectedCountries={selectedCountries}
                     onCountrySelectionChange={setSelectedCountries}
                   />
+                </div>
+              )}
+
+              {/* Nuclear Reactor Workspace */}
+              {showComponent("reactor") && (
+                <div className="pixel-box-animate animation-delay-750">
+                  <ReactorWorkspacePanel error={null} />
                 </div>
               )}
 
