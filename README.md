@@ -47,7 +47,7 @@ To run this project locally:
 - **Framework**: Next.js with React
 - **Styling**: Tailwind CSS with custom animation extensions
 - **Visualizations**: D3.js for custom charts
-- **Data Sources**:
+- **Data Sources (Note these are sythesized from the RAW data folder)**:
   - `/public/data/Nuclear_Operational_Sites.csv` - Reactor data
   - `/public/data/world_nuclear_energy_generation.csv` - Power generation data
   - `/public/data/death_rates.json` - Safety comparison data
