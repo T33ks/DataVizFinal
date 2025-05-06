@@ -162,11 +162,11 @@ export default function ReactorsMapDirect({ highlightedCountries }: ReactorsMapP
           "Sweden": "SWEDEN"
         }
 
-        // Create color scale for reactor counts
+        // Create color scale for reactor counts with enhanced contrast
         const colorScale = d3
           .scaleThreshold<number, string>()
           .domain([1, 10, 30, 60])
-          .range(["#1f2937", "#4ade80", "#34d399", "#10b981", "#059669"])
+          .range(["#1f2937", "#4ade80", "#00a3e0", "#a78bfa", "#ffc107"])
 
         // Draw countries
         svg
@@ -225,10 +225,10 @@ export default function ReactorsMapDirect({ highlightedCountries }: ReactorsMapP
         // Add legend with semi-transparent background and green outline
         const legendItems = [
           { label: "No operational reactors", color: "#1f2937" },
-          { label: "1-9 operational reactors", color: "#4ade80" },
-          { label: "10-29 operational reactors", color: "#34d399" },
-          { label: "30-59 operational reactors", color: "#10b981" },
-          { label: "60+ operational reactors", color: "#059669" },
+          { label: "1-9 operational reactors", color: "#4ade80" },    // Green
+          { label: "10-29 operational reactors", color: "#00a3e0" },  // Blue
+          { label: "30-59 operational reactors", color: "#a78bfa" },  // Neon Purple
+          { label: "60+ operational reactors", color: "#ffc107" },    // Yellow/Gold
         ]
         
         // Calculate legend dimensions
